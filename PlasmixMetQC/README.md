@@ -1,6 +1,6 @@
 ```markdown
 # PlasmixMetaboQC: Metabolomics Quality Control Toolkit
-**PlasmixMetaboQC** 是专为 Plasmix 计划开发的代谢组学数据质量控制（QC）R 包。该工具基于比例（Ratio-based）定量策略，利用 Plasmix 血浆参考物质（M, Y, P, X, F）评估代谢组数据的信噪比（SNR）和与参考数据集的一致性（RC）。
+**PlasmixMetaboQC** 是专为 Plasmix 计划开发的代谢组学数据质量控制（QC）R 包。该工具基于比例（Ratio-based）定量策略，利用 Plasmix 血浆参考物质（M, Y, P, X, F）评估代谢组数据的信噪比（SNR）和与参考数据集的一致性（PCC）。
 
 该包旨在简化非靶向和靶向代谢组学数据的质控流程，支持一键生成中文 Word 报告。
 
@@ -12,7 +12,7 @@
     * **旧格式兼容**：自动识别并移除包含 `Type` 的冗余列。
 * **关键指标计算**：
     * **SNR (Signal-to-Noise Ratio)**：评估样本组间生物学差异（信号）与技术重复变异（噪声）的比值。
-    * **RC (Relative Correlation)**：评估实测数据的比值指纹与标准参考数据集的 Pearson 相关性。
+    * **PCC (Pearson Correlation Coeffiency)**：评估实测数据的比值指纹与标准参考数据集的 Pearson 相关性。
 * **自动化报告**：直接生成包含散点图、PCA 图和详细结论的 `.docx` 格式质控报告。
 
 ## 📦 安装说明
@@ -107,8 +107,8 @@ generate_metabo_report(
 | 指标 (Metric) | 阈值 (Threshold) | 说明 |
 | --- | --- | --- |
 | **信噪比 (SNR)** | **≥ 5** | 数值越高，表示组间差异信号越显著，技术噪音越低。 |
-| **相对相关性 (RC)** | **≥ 0.80** | 数值越高，表示实测数据的相对定量趋势与标准参考值越一致。 |
-| **整体质量** | **Pass** | 仅当 **SNR** 和 **RC** 同时达标时，判定为通过。 |
+| **相对相关性 (PCC)** | **≥ 0.80** | 数值越高，表示实测数据的相对定量趋势与标准参考值越一致。 |
+| **整体质量** | **Pass** | 当 **SNR** 达标时，判定为通过。 PCC仅作为参考|
 
 > **注意**：若报告中的数值旁出现红色箭头 (↓)，表示该指标未达到推荐标准。
 
