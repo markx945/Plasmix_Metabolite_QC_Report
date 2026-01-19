@@ -66,16 +66,16 @@ generate_metabo_report <- function(qc_result,
   # 3.2 RC (Target >= 0.80)
   if (length(val_rc) == 0 || is.na(val_rc)) {
     txt_rc <- "-"
-    pass_rc <- FALSE
+    # pass_rc <- FALSE
   } else {
-    txt_rc <- sprintf("%.3f", val_rc)
-    if (val_rc < 0.80) {
-      txt_rc <- paste0(txt_rc, " ↓")
-      pass_rc <- FALSE
-    } else {
-      pass_rc <- TRUE
-    }
-  }
+    txt_rc <- sprintf("%.3f", val_rc)}
+  #   if (val_rc < 0.80) {
+  #     txt_rc <- paste0(txt_rc, " ↓")
+  #     pass_rc <- FALSE
+  #   } else {
+  #     pass_rc <- TRUE
+  #   }
+  # }
   
   # 3.3 整体判定 (SNR 通过即可)
   # is_all_pass <- pass_snr && pass_rc
@@ -118,7 +118,7 @@ generate_metabo_report <- function(qc_result,
   
   txt_refs <- c(
     "1. Zheng Y, et al. Multi-omics data integration using ratio-based quantitative profiling with Quartet reference materials. Nature Biotechnology, 2024.",
-    "2. Quality control of metabolomics data using reference materials. (Generic Citation)",
+    "2. Liu, Y. et al. Harmonizing plasma proteomics data with the sample-to-reference ratio approach. BioRxiv (2026)",
     "3. 上海临床队列组学检测工作指引（征求意见稿）, 2025/11/26"
   )
   
