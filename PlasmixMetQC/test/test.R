@@ -4,8 +4,8 @@ devtools::document()
 
 # 2. 定义文件路径
 # 请确保这两个文件在你的工作目录，或者填写绝对路径
-expr_file <- "./test/plasmix_met_test_expr.txt"
-meta_file <- "./test/plasmix_met_test_meta.txt"
+expr_file <- "./test/plasmix_met_test_expr.csv"
+meta_file <- "./test/plasmix_met_test_meta.csv"
 
 template <- system.file("extdata", "Plasmix_template.docx", package = "PlasmixMetQC")
 
