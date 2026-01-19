@@ -1,12 +1,8 @@
 ```markdown
 # PlasmixMetaboQC: Metabolomics Quality Control Toolkit
+**PlasmixMetaboQC** 是专为 Plasmix 计划开发的代谢组学数据质量控制（QC）R 包。该工具基于比例（Ratio-based）定量策略，利用 Plasmix 血浆参考物质（M, Y, P, X, F）评估代谢组数据的信噪比（SNR）和与参考数据集的一致性（RC）。
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![Platform](https://img.shields.io/badge/Platform-Metabolomics-blue)
-![Language](https://img.shields.io/badge/Language-R-276DC3)
-**PlasmixMetaboQC** 是专为 Plasmix 计划开发的代谢组学数据质量控制（QC）R 包。该工具基于比值（Ratio-based）定量策略，利用 Quartet 参考物质（M, Y, P, X, F）评估代谢组数据的信噪比（SNR）和与参考数据集的一致性（RC）。
-
-该包旨在简化非靶向和靶向代谢组学数据的质控流程，支持一键生成符合申康 Plasmix 标准的中文 Word 报告。
+该包旨在简化非靶向和靶向代谢组学数据的质控流程，支持一键生成中文 Word 报告。
 
 ## ✨ 核心功能
 
@@ -25,14 +21,12 @@
 
 ```r
 # 方法 1: 如果项目已上传至 GitHub (请替换您的用户名)
-# devtools::install_github("YourUsername/PlasmixMetaboQC")
+# devtools::install_github("https://github.com/markx945/Plasmix_Metabolite_QC_Report/tree/main/PlasmixMetQC")
 
 # 方法 2: 如果您在本地项目根目录下
 devtools::install_local(".")
 
 ```
-
-> **注意**：请确保您的 DESCRIPTION 文件中 `Package:` 名称与加载时使用的名称一致（推荐为 `PlasmixMetaboQC`）。
 
 ## 📂 数据准备
 
